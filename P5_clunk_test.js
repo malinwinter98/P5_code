@@ -24,7 +24,7 @@ let nextChange = timer;
 let x = 600;
 let y= 900; 
 let draw_sound;
-let pink = color(255, 102, 204);
+
 
 function preload() {
   img = loadImage('background.png');
