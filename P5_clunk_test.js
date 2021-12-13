@@ -1,21 +1,29 @@
-let img;
+let img_background;
+
+
 var button_draw;
 var button_erase;
+
 let canvas;
 let yellow = '#E8CD34';
+
 let pencil = false;
+
 let button_erase_x = 1000;
 let button_erase_y = 700;
-let imagesize = 50;
+
 let button_draw_x = 1000;
 let button_draw_y = 800;
+
 let myImageArray1 = [];
 let myImageArray2 = [];
 let myImageArray3 = [];
+
 let y3 = 1000; 
 let y1= 398; 
 let y2= 688;
-let v = 50; 
+let v = 50;
+
 let timer = 6000;  
 let timer_animation = 20000;
 let timer_delta =12000;
@@ -27,8 +35,9 @@ let draw_sound;
 
 
 function preload() {
-  img = loadImage('Images/background.png');
+  img_background = loadImage('Images/background.png');
   clunk = loadImage('Images/clunk.png');
+  button_image = loadImage('draw_default.png')
   soundFormats('wav', 'ogg');
   draw_sound = loadSound('Sound/plop_draw.wav');
 erase_sound = loadSound('Sound/plop_erase.wav'); 
@@ -66,7 +75,7 @@ function setup() {
 
 
 function draw() {
-  image(img, 0, 0); 
+  image(img_background, 0, 0); 
 if (millis() > nextChange_animation && millis()<(nextChange_animation+timer_delta)){
   animation();   
 }
