@@ -27,12 +27,12 @@ let draw_sound;
 
 
 function preload() {
-  img = loadImage('background.png');
-  clunk = loadImage('clunk.png');
+  img = loadImage('/Images/background.png');
+  clunk = loadImage('/Images/clunk.png');
   soundFormats('wav', 'ogg');
-  draw_sound = loadSound('Sound/plop_draw.wav');
-erase_sound = loadSound('Sound/plop_erase.wav'); 
-icon_sound = loadSound('Sound/bubble.wav'); 
+  draw_sound = loadSound('/Sound/plop_draw.wav');
+erase_sound = loadSound('/Sound/plop_erase.wav'); 
+icon_sound = loadSound('/Sound/bubble.wav'); 
   
     for (let i = 1; i < 37; i++) {
         myImageArray1[i] = loadImage('Icons/Level1/Doodle' + i + '.png');
