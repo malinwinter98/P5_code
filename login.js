@@ -48,7 +48,7 @@ function draw() {
 
 function login() {
 
-        window.location.replace("/reflectionpanel.html"); 
+        window.location.replace("/reflectionpanel.html/"); 
     
 }
 function myInputEvent() {
