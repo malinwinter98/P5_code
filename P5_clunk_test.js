@@ -27,21 +27,21 @@ let draw_sound;
 
 
 function preload() {
-  img = loadImage('/images/background.png');
-  clunk = loadImage('/images/clunk.png');
+  img = loadImage('P5_code/images/background.png');
+  clunk = loadImage('P5_code/images/clunk.png');
   soundFormats('wav', 'ogg');
-  draw_sound = loadSound('sounds/plop_draw.wav');
-  erase_sound = loadSound('sounds/plop_erase.wav');
-  icon_sound = loadSound('sounds/bubble.wav');
+  draw_sound = loadSound('P5_code/sounds/plop_draw.wav');
+  erase_sound = loadSound('P5_code/sounds/plop_erase.wav');
+  icon_sound = loadSound('P5_code/sounds/bubble.wav');
 
   for (let i = 1; i < 37; i++) {
-    myImageArray1[i] = loadImage('icons/Level1/Doodle' + i + '.png');
+    myImageArray1[i] = loadImage('P5_code/icons/Level1/Doodle' + i + '.png');
   }
   for (let i = 1; i < 100; i++) {
-    myImageArray2[i] = loadImage('icons/Level2/2_Doodle' + i + '.png');
+    myImageArray2[i] = loadImage('P5_code/icons/Level2/2_Doodle' + i + '.png');
   }
   for (let i = 1; i < 60; i++) {
-    myImageArray3[i] = loadImage('icons/Level3/3_Doodle' + i + '.png');
+    myImageArray3[i] = loadImage('P5_code/icons/Level3/3_Doodle' + i + '.png');
   }
   console.log(myImageArray1);
   console.log(myImageArray2)
