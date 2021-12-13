@@ -38,7 +38,7 @@ function preload() {
     myImageArray1[i] = loadImage('icons/Level1/Doodle' + i + '.png');
   }
   for (let i = 1; i < 100; i++) {
-    myImageArray2[i] = loadImage('ccons/Level2/2_Doodle' + i + '.png');
+    myImageArray2[i] = loadImage('icons/Level2/2_Doodle' + i + '.png');
   }
   for (let i = 1; i < 60; i++) {
     myImageArray3[i] = loadImage('icons/Level3/3_Doodle' + i + '.png');
