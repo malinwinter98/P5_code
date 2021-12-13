@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+.button{
+  border-color: #2065A9;
+  border-radius: 10px; 
+  background-color: #2779BA;
+}
+input[type=text] {
+  border-color: #2065A9;
+  border-radius: 10px; 
+  background-color: #2779BA;
+  color: #E8CD34; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 150;
+}
+.shadow {
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+}
