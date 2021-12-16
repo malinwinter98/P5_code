@@ -1,3 +1,7 @@
+
+const canvDimx = 1200;  
+const canvDimy = 700; 
+
 let img_background;
 
 
@@ -25,15 +29,19 @@ let y1= 398;
 let y2= 688;
 let v = 50;
 
-let timer = 6000;  
 
-let timer_animation = 20000;
-let timer_delta = 12000;
-let nextChange_animation = timer_animation;
-let nextChange = timer;
-let x = 600;
-let y = 900;
+
+let timer = 6000;  
+let timer_animation = 9000;
+let timer_delta =14000;
+let nextChange_animation = timer_animation; 
+let nextChange = timer; 
+ let timer_sound = 9000; 
+ let nextChange_sound = timer_sound; 
+let x = 10;
+let y = 600;
 let draw_sound;
+let erase_sound; 
 
 
 function preload() {
@@ -43,10 +51,11 @@ function preload() {
 
 
 
-  soundFormats('wav', 'ogg');
-  draw_sound = loadSound('sounds/plop_draw.wav');
-  erase_sound = loadSound('sounds/plop_erase.wav');
-  icon_sound = loadSound('sounds/bubble.wav');
+  soundFormats('mp3', 'ogg');
+   draw_sound = loadSound('sounds/plop_draw.mp3');
+  erase_sound = loadSound('sounds/slide_erase.mp3');
+  icon_sound = loadSound('sounds/bubble.mp3');
+  clunkwalk = loadSound ( "Sounds/clunkwalk.mp3");
 
   for (let i = 1; i < 37; i++) {
     myImageArray1[i] = loadImage('Icons/Level1/Doodle' + i + '.png');
@@ -62,20 +71,20 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1600, 1200);
-  icons = createGraphics(width, height);
-  canvas = createGraphics(width, height);
+  createCanvas(canvDimx, canvDimy);
+  icons = createGraphics(canvDimx, canvDimy);
+  canvas = createGraphics(canvDimx, canvDimy);
 
   button_draw = createImg('draw_default.png');
-  button_draw.position(button_draw_x, button_draw_y);
+  button_draw.position(width+100, height-200);
   button_draw.size(60, 60);
   button_draw.mousePressed(changedraw);
 
   button_erase = createImg('erase_default.png');
-  button_erase.position(button_erase_x, button_erase_y);
+  button_erase.position(width+100, height-100);
   button_erase.size(60, 60);
   button_erase.mousePressed(changeerase);
-  clunk.resize(200, 400);
+  clunk.resize(300,0);
   img_background.resize(width, height);
 }
 
@@ -91,10 +100,16 @@ function draw() {
   }
   if (millis() > nextChange_animation + timer_delta) {
     nextChange_animation = millis() + timer_animation + timer_delta;
-    x = 600;
-    y = 900;
+    x = 10;
+    y = 600;
   }
-
+  
+ 
+  
+  if((millis() > nextChange_sound)){ 
+   clunkwalk.play(); 
+   nextChange_sound = millis() + timer_sound+(2*timer_delta); 
+ }
 
   if ((millis() > nextChange) && pencil == true) {
     
@@ -112,8 +127,9 @@ function changedraw() {
   draw_sound.play();
 }
 function changeerase() {
-  eraseFunction();
+  canvas.clear(); 
   pencil = false;
+  erase_sound.play(); 
 }
 
 function mouseDragged() {
@@ -172,16 +188,16 @@ function iconsShow() {
 
 
 
-function animation() {
 
-  image(clunk, x, y, 50, 50);
 
-  x = x + random(-1, 1);
-  y = y - 1;
-  if (y < 0) {
-    y = height;
+  function animation() {
 
+    image(clunk, x, y);
+  
+    x =x+ random(-1,3); 
+    y = y - 1;
+    
   }
-}
+
 
 
