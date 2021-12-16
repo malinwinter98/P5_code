@@ -40,7 +40,7 @@ function preload() {
 
   img_background = loadImage('Images/background.png');
   clunk = loadImage('Images/Clunk.png');
-  button_image = loadImage('draw_default.png')
+
 
 
   soundFormats('wav', 'ogg');
